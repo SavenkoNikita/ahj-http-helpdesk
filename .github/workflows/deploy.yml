@@ -3,13 +3,13 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-    
+    permissions:
+      contents: write
+
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -20,10 +20,10 @@ jobs:
         node-version: '18'
         cache: 'npm'
 
-    - name: Install dependencies
+    - name: Install frontend dependencies
       run: npm ci
 
-    - name: Build
+    - name: Build frontend
       run: npm run build
 
     - name: Deploy to GitHub Pages
