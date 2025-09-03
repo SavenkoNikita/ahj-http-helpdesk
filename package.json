@@ -1,0 +1,34 @@
+{
+  "name": "ahj-http-helpdesk",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000a\u0000h\u0000j\u0000-\u0000h\u0000t\u0000t\u0000p\u0000-\u0000h\u0000e\u0000l\u0000p\u0000d\u0000e\u0000s\u0000k\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development",
+    "start": "npm run dev",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SavenkoNikita/ahj-http-helpdesk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SavenkoNikita/ahj-http-helpdesk/issues"
+  },
+  "homepage": "https://github.com/SavenkoNikita/ahj-http-helpdesk#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^13.0.1",
+    "css-loader": "^7.1.2",
+    "gh-pages": "^6.3.0",
+    "html-webpack-plugin": "^5.6.4",
+    "mini-css-extract-plugin": "^2.9.4",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}

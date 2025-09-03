@@ -1,0 +1,260 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.helpdesk-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.helpdesk-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.helpdesk-header h1 {
+    color: #333;
+}
+
+.btn-add-ticket {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-add-ticket:hover {
+    background-color: #218838;
+}
+
+.tickets-container {
+    min-height: 200px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-title {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.ticket-form label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #555;
+}
+
+.ticket-form input,
+.ticket-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.ticket-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modal-actions button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-cancel {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-cancel:hover {
+    background-color: #5a6268;
+}
+
+.modal-actions button[type="submit"],
+.btn-confirm-delete {
+    background-color: #007bff;
+    color: white;
+}
+
+.modal-actions button[type="submit"]:hover,
+.btn-confirm-delete:hover {
+    background-color: #0069d9;
+}
+
+#deleteModal p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.ticket {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  gap: 15px;
+}
+
+.ticket:hover {
+  background-color: #f9f9f9;
+}
+
+.ticket-status {
+  flex-shrink: 0;
+}
+
+.ticket-content {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.ticket-name {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  word-break: break-word;
+}
+
+.ticket-description {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.ticket-date {
+  color: #999;
+  font-size: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ticket-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.ticket-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.btn-edit:hover {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.btn-delete:hover {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+.ticket-description.hidden {
+  display: none;
+}
+
+.ticket-description:not(.hidden) {
+  display: block;
+  margin-top: 8px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border-left: 3px solid #007bff;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #666;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
